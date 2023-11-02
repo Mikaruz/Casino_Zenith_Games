@@ -12,7 +12,9 @@ public class PlayerLife : MonoBehaviour
     void Start()
     {
         initialLife = 3;
-        initialLife = actualLife;
+
+        actualLife = initialLife;
+        Debug.Log(actualLife);
 
     }
 
@@ -26,6 +28,7 @@ public class PlayerLife : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             TakeDamage(1);
+            Debug.Log(actualLife);
         }
     }
     private void TakeDamage(int damage)
